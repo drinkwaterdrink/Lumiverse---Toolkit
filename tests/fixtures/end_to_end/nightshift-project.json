@@ -1,0 +1,106 @@
+{
+  "schema": "lumiverse-toolkit.project/v1",
+  "project": {
+    "id": "project-nightshift-house",
+    "name": "Nightshift House",
+    "version": "0.1",
+    "status": "planning",
+    "target": {
+      "application": "Lumiverse",
+      "documentation_snapshot": null
+    }
+  },
+  "authority": {
+    "source_order": [
+      "user",
+      "approved_project",
+      "lumiverse_docs_technical",
+      "external_reference",
+      "generated"
+    ],
+    "fact_statuses": ["canon", "provisional", "disputed", "deprecated"]
+  },
+  "preferences": {
+    "detail": "rich",
+    "always_injected": "lean",
+    "primary_surface": "android-mobile"
+  },
+  "agency": {
+    "protected_subject": "{{user}}",
+    "reserved": [
+      "actions",
+      "dialogue",
+      "thoughts",
+      "feelings",
+      "attraction",
+      "consent",
+      "decisions",
+      "backstory"
+    ]
+  },
+  "policies": [
+    {
+      "id": "policy-real-frank",
+      "origin": "user",
+      "applies_to": {
+        "artifact_type": "loom_preset",
+        "name_family": "Real Frank"
+      },
+      "rules": {
+        "name": "🧟 Real Frank vX.X — Lumi Native",
+        "version_increment": 0.1,
+        "bundle_regex": true,
+        "preserve_latest_settings": true,
+        "starting_version": null
+      }
+    }
+  ],
+  "entities": [],
+  "canon": [],
+  "artifacts": [
+    {
+      "id": "artifact-world-book",
+      "type": "world_book",
+      "status": "planned",
+      "display_name": "Nightshift House World Book",
+      "origin": "user"
+    },
+    {
+      "id": "artifact-generic-loom-preset",
+      "type": "loom_preset",
+      "status": "planned",
+      "display_name": "Generic Roleplay",
+      "origin": "user"
+    }
+  ],
+  "dependencies": [],
+  "validation": {
+    "status": "contracts_passed",
+    "findings": [],
+    "last_run": null
+  },
+  "release": {
+    "status": "unreleased",
+    "manifest": null
+  },
+  "decisions": [
+    {
+      "id": "decision-generic-preset-tracker-state",
+      "status": "confirmed",
+      "value": "unselected",
+      "origin": "user"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "unresolved-world-book-native-template",
+      "blocks": "native World Book serialization fidelity",
+      "needed": "current Lumiverse World Book export template"
+    },
+    {
+      "id": "unresolved-source-preset",
+      "blocks": "preset conversion and runtime certification",
+      "needed": "source SillyTavern Chat Completion preset and Lumiverse Dry Run evidence"
+    }
+  ]
+}

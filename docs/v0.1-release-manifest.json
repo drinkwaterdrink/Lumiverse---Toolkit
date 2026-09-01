@@ -1,0 +1,36 @@
+{
+  "schema": "lumiverse-toolkit.release/v1",
+  "plugin": "lumiverse-toolkit",
+  "version": "0.1.0",
+  "status": "verified",
+  "skills": [
+    "lumiverse-project-steward",
+    "lumiverse-character-forge",
+    "lumiverse-scenario-forge"
+  ],
+  "specialist_integrations": [
+    "forge-lumiverse-lorebooks",
+    "lumiverse-preset-converter"
+  ],
+  "contracts": [
+    "lumiverse-toolkit.project/v1",
+    "lumiverse-toolkit.specialist-handoff/v1"
+  ],
+  "verification": {
+    "deterministic_tests": 24,
+    "behavior_samples": {
+      "project_steward_green": 5,
+      "character_forge_green": 5,
+      "scenario_forge_green": 5
+    },
+    "connected_acceptance_tests": 6,
+    "marketplace_contract_tests": 4,
+    "plugin_validation": "pass",
+    "skill_validation": "pass"
+  },
+  "installation": {
+    "marketplace": "personal",
+    "policy": "INSTALLED_BY_DEFAULT"
+  },
+  "certification_boundary": "Artifact-specific import, Dry Run, runtime, and round-trip claims remain pending until real artifacts and evidence are supplied."
+}

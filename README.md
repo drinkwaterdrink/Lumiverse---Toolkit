@@ -1,1 +1,53 @@
-# Lumiverse---Toolkit
+# Lumiverse Toolkit
+
+An installable personal ChatGPT/Codex plugin for creating, revising, auditing, and coordinating Lumiverse roleplay artifacts.
+
+[Installation guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Verification report](docs/v0.1-verification-report.md)
+
+## v0.1 skills
+
+- **Lumiverse Project Steward** — shared canon, project records, cross-artifact changes, specialist routing, validation, and release coordination.
+- **Lumiverse Character Forge** — source-faithful character creation, revision, conversion, module planning, agency audits, and preservation passports.
+- **Lumiverse Scenario Forge** — open scenario seeds, pressure graphs, agency-safe openings, conditional clocks, and modular expansion.
+
+The Steward integrates with the separately installed:
+
+- **Forge Lumiverse Lorebooks** for World Books;
+- **Lumiverse Preset Converter** for SillyTavern Chat Completion → Lumiverse Loom migration.
+
+## Try it
+
+- “Start a reusable Lumiverse project for this idea and tell me which artifacts and skills it needs.”
+- “Create a rich Lumiverse character card from this brief. Keep new ideas provisional.”
+- “Turn this premise into a RICH SANDBOX Lumiverse scenario seed.”
+- “Rename this character across my card, World Book, scenario, preset prompts, and tracker references.”
+- “Audit this connected Lumiverse project and package a release manifest.”
+
+Self-contained artifact requests route directly to the matching specialist. Project Steward activates when continuity, source conflicts, propagation, staged resumption, or release coordination matters.
+
+## Safety and evidence boundaries
+
+- User canon outranks generated/external suggestions.
+- `{{user}}` agency violations are blockers.
+- Unknown schema fields and settings are preserved during revisions.
+- Import, runtime, and round-trip claims require actual evidence.
+- Generic roleplay presets remain tracker-agnostic unless a tracker is selected.
+- Real Frank rules are project/artifact-scoped, never global defaults.
+
+## Verification
+
+The repository contains baseline and GREEN behavior samples, deterministic validators, fixtures, and result reports under `tests/`. Run:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+The v0.1 package passed 24 deterministic tests plus 15 GREEN behavior samples. This certifies the plugin structure, marketplace metadata, contracts, and routing behavior—not future artifacts that have not yet been imported or exercised in Lumiverse.
+
+## Roadmap
+
+Planned after v0.1 field testing: Tracker Forge, Prompt & Regex Laboratory, LumiScript Workshop, and Spindle Extension Forge.
+
+## Provenance and licensing
+
+See [source provenance](docs/source-provenance.md). No third-party WorldBuilder code was copied into this repository. No general reuse license is granted yet; all rights remain with the repository owner unless a license is added later.

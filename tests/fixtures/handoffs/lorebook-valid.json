@@ -1,0 +1,43 @@
+{
+  "schema": "lumiverse-toolkit.specialist-handoff/v1",
+  "task_id": "task-nightshift-world-book",
+  "project_id": "project-nightshift-house",
+  "specialist": "forge-lumiverse-lorebooks",
+  "operation": "new_build",
+  "artifact": {
+    "id": "artifact-world-book",
+    "type": "world_book",
+    "status": "planned"
+  },
+  "evidence": {
+    "source_authority": ["user", "approved_project", "lumiverse_docs_technical", "generated"],
+    "documentation_snapshot": null,
+    "canon_subset": [],
+    "creative_authority": "proposals_only"
+  },
+  "constraints": {
+    "agency_contract": "project",
+    "always_injected": "lean",
+    "primary_surface": "android-mobile"
+  },
+  "dependencies": [],
+  "policies": [],
+  "specialist_requirements": {
+    "scope": "character",
+    "ownership_boundaries": [],
+    "token_budget": "recommend_then_test",
+    "activation_tests": {
+      "positive": ["representative expected trigger"],
+      "negative": ["near miss that must not trigger"],
+      "collision": ["phrase resembling another entry"]
+    }
+  },
+  "preserve": ["stable entry IDs", "unknown native-template fields"],
+  "return_contract": [
+    "completed_artifact",
+    "artifact_passport",
+    "validation_findings",
+    "proposed_record_changes",
+    "unresolved_questions"
+  ]
+}

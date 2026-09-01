@@ -1,0 +1,55 @@
+{
+  "schema": "lumiverse-toolkit.specialist-handoff/v1",
+  "task_id": "task-generic-roleplay-preset",
+  "project_id": "project-nightshift-house",
+  "specialist": "lumiverse-preset-converter",
+  "operation": "convert",
+  "artifact": {
+    "id": "artifact-generic-loom-preset",
+    "type": "loom_preset",
+    "status": "planned"
+  },
+  "evidence": {
+    "source_authority": ["runtime", "lumiverse_docs_technical", "source_preset", "generated"],
+    "documentation_snapshot": null,
+    "canon_subset": [],
+    "source_artifacts": ["source Chat Completion preset"],
+    "native_envelope": null
+  },
+  "constraints": {
+    "agency_contract": "project",
+    "preserve_user_settings": true,
+    "parity_before_native_changes": true
+  },
+  "dependencies": [],
+  "policies": [
+    {
+      "id": "policy-real-frank",
+      "applies_to": {
+        "artifact_type": "loom_preset",
+        "name_family": "Real Frank"
+      },
+      "rules": {
+        "name": "🧟 Real Frank vX.X — Lumi Native",
+        "version_increment": 0.1,
+        "bundle_regex": true,
+        "preserve_latest_settings": true,
+        "starting_version": null
+      }
+    }
+  ],
+  "specialist_requirements": {
+    "preset_kind": "generic_roleplay",
+    "tracker": "unselected",
+    "target_model_provider": null,
+    "dry_run_required_for_runtime_certification": true
+  },
+  "preserve": ["source blocks", "enabled states", "prompt order", "unknown fields", "settings", "selections"],
+  "return_contract": [
+    "completed_artifact",
+    "artifact_passport",
+    "validation_findings",
+    "proposed_record_changes",
+    "unresolved_questions"
+  ]
+}

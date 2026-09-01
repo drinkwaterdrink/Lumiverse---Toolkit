@@ -1,0 +1,21 @@
+{
+  "name": "lumiverse-toolkit-marketplace",
+  "interface": {
+    "displayName": "Lumiverse Toolkit"
+  },
+  "plugins": [
+    {
+      "name": "lumiverse-toolkit",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/drinkwaterdrink/Lumiverse---Toolkit.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lumiverse-toolkit.local/schemas/project-record-v1.json",
+  "title": "Lumiverse Toolkit Project Record v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "project",
+    "authority",
+    "preferences",
+    "agency",
+    "policies",
+    "entities",
+    "canon",
+    "artifacts",
+    "dependencies",
+    "validation",
+    "release",
+    "decisions",
+    "unresolved"
+  ],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.project/v1"},
+    "project": {
+      "type": "object",
+      "required": ["id", "name", "version", "status", "target"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "status": {"enum": ["planning", "active", "paused", "releasing", "released", "archived"]},
+        "target": {
+          "type": "object",
+          "required": ["application", "documentation_snapshot"],
+          "properties": {
+            "application": {"const": "Lumiverse"},
+            "documentation_snapshot": {"type": ["string", "null"]}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "authority": {"type": "object"},
+    "preferences": {"type": "object"},
+    "agency": {"type": "object"},
+    "policies": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
+    "entities": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
+    "canon": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
+    "artifacts": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
+    "dependencies": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
+    "validation": {"type": "object"},
+    "release": {"type": "object"},
+    "decisions": {"type": "array"},
+    "unresolved": {"type": "array"}
+  },
+  "$defs": {
+    "idObject": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {"id": {"type": "string", "minLength": 1}},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

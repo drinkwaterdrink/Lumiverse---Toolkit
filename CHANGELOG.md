@@ -16,3 +16,9 @@
 - v0.1 does not install files into Lumiverse itself.
 - Runtime, import, Dry Run, and round-trip certification remains artifact-specific.
 - Tracker Forge, Prompt & Regex Laboratory, LumiScript Workshop, and Spindle Extension Forge remain planned for later releases.
+# v0.2.0
+
+- Bundle Forge Lumiverse Lorebooks and Lumiverse Preset Converter with all resources.
+- Route Project Steward to the bundled specialists.
+- Default Character Forge to supported V3 CHARX packaging; preserve source resources.
+- Add seven CHARX regression tests and document runtime limits/dependencies.

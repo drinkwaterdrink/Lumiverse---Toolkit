@@ -1,0 +1,25 @@
+{
+  "schema": "loreforge.activation-tests.v1",
+  "cases": [
+    {
+      "name": "Canonical positive",
+      "messages": ["Tell me about Example."],
+      "books": ["world"],
+      "expected_active": ["world.example"],
+      "expected_inactive": [],
+      "max_activated_entries": null,
+      "max_token_budget": null,
+      "notes": ""
+    },
+    {
+      "name": "Near miss",
+      "messages": ["This sentence is unrelated."],
+      "books": ["world"],
+      "expected_active": [],
+      "expected_inactive": ["world.example"],
+      "max_activated_entries": null,
+      "max_token_budget": null,
+      "notes": ""
+    }
+  ]
+}

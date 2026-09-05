@@ -1,0 +1,70 @@
+{
+  "schema": "loreforge.lumiverse.v1",
+  "project": {
+    "name": "",
+    "description": "",
+    "operation": "new_build",
+    "build_shape": "focused",
+    "creative_authority": "ask_before_new_canon",
+    "source_authority": [],
+    "lumiverse_native_template": null
+  },
+  "recommended_runtime": {
+    "global_scan_depth": null,
+    "max_recursion_passes": 3,
+    "max_activated_entries": null,
+    "max_token_budget": null,
+    "min_priority": 0,
+    "notes": []
+  },
+  "books": [
+    {
+      "id": "world",
+      "name": "World Lore",
+      "description": "",
+      "scope_recommendation": "character",
+      "activation_policy": "always_attached",
+      "entries": [
+        {
+          "stable_id": "world.example",
+          "title": "Example entry",
+          "category": "location",
+          "state": "conditional",
+          "content": "Replace this example with concise, playable lore.",
+          "keywords": ["Example"],
+          "secondary_keywords": [],
+          "selective_logic": "or",
+          "case_sensitive": false,
+          "match_whole_words": false,
+          "use_regex": false,
+          "scan_depth": null,
+          "probability": 100,
+          "use_probability": false,
+          "position": 0,
+          "depth": null,
+          "role": "system",
+          "order": 100,
+          "priority": 60,
+          "sticky": 0,
+          "cooldown": 0,
+          "delay": 0,
+          "group": null,
+          "group_override": false,
+          "group_weight": 100,
+          "prevent_recursion": false,
+          "exclude_recursion": false,
+          "delay_until_recursion": false,
+          "vectorized": false,
+          "comment": "",
+          "content_rationale": "",
+          "activation_rationale": "",
+          "tests": {
+            "positive": ["Tell me about Example."],
+            "negative": ["An unrelated sentence."],
+            "collision": []
+          }
+        }
+      ]
+    }
+  ]
+}

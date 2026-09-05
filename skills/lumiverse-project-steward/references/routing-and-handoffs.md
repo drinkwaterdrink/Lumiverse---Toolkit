@@ -21,7 +21,7 @@ Use Project Steward when any of these is true:
 | World Book/lorebook | Lorebook Forge | canon subset, ownership, activation targets, budget, source evidence |
 | Preset conversion/audit | Preset Converter | source preset, target docs snapshot, scoped policies, tracker selection, preservation requirements |
 
-If no matching specialist exists, retain the task as `unresolved` or use an explicitly approved manual workflow. Do not imply an unavailable module exists.
+All four specialists in this table are bundled in v0.2 under the plugin's skills directory. Route World Books to `forge-lumiverse-lorebooks` and ST Chat Completion migration to `lumiverse-preset-converter`. Native preset creation remains outside the converter's scope. If a skill fails to load or no matching specialist exists for other work, retain the task as `unresolved` or use an explicitly approved manual workflow.
 
 ## Handoff packet
 

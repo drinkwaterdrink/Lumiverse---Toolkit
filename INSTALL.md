@@ -1,6 +1,6 @@
 # Install Lumiverse Toolkit
 
-Lumiverse Toolkit v0.1 is a skills-only ChatGPT/Codex plugin. It has no MCP server, external account connection, hooks, or executable third-party runtime dependency.
+Lumiverse Toolkit v0.2 bundles five skills. It has no MCP server, external account connection, or hooks. Python 3.10+ is required for bundled validators and CHARX packaging; Node.js is required for the preset Regex checker. Both specialists are included without a separate personal-skill installation.
 
 ## Install from the GitHub marketplace
 

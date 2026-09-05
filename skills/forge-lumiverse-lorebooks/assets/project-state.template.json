@@ -1,0 +1,21 @@
+{
+  "schema": "loreforge.project-state.v1",
+  "project_name": "",
+  "operation": "new_build",
+  "current_phase": 0,
+  "status": "in_progress",
+  "build_shape": "focused",
+  "target_scope": "character",
+  "source_authority": [],
+  "artifacts": {
+    "seed": "pending",
+    "master_design": "pending",
+    "spec": "pending",
+    "activation_tests": "pending",
+    "audit": "pending",
+    "export": "pending"
+  },
+  "blockers": [],
+  "decisions": [],
+  "updated_at": ""
+}

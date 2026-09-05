@@ -4,13 +4,13 @@ An installable personal ChatGPT/Codex plugin for creating, revising, auditing, a
 
 [Installation guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Verification report](docs/v0.1-verification-report.md)
 
-## v0.1 skills
+## v0.2 bundled skills
 
 - **Lumiverse Project Steward** — shared canon, project records, cross-artifact changes, specialist routing, validation, and release coordination.
 - **Lumiverse Character Forge** — source-faithful character creation, revision, conversion, module planning, agency audits, and preservation passports.
 - **Lumiverse Scenario Forge** — open scenario seeds, pressure graphs, agency-safe openings, conditional clocks, and modular expansion.
 
-The Steward integrates with the separately installed:
+Also included in the same installation:
 
 - **Forge Lumiverse Lorebooks** for World Books;
 - **Lumiverse Preset Converter** for SillyTavern Chat Completion → Lumiverse Loom migration.
@@ -35,6 +35,12 @@ Self-contained artifact requests route directly to the matching specialist. Proj
 - Real Frank rules are project/artifact-scoped, never global defaults.
 
 ## Verification
+
+v0.2 adds V3 CHARX packaging with embedded-resource checks. See
+[CHARX packaging](skills/lumiverse-character-forge/references/charx-packaging.md).
+Python 3.10+ runs the validators/exporter; Node.js runs the converter's JavaScript
+Regex checker. No personal specialist installation is required. The Preset
+Converter covers migration/audit/repair; a native Preset Studio is still planned.
 
 The repository contains baseline and GREEN behavior samples, deterministic validators, fixtures, and result reports under `tests/`. Run:
 

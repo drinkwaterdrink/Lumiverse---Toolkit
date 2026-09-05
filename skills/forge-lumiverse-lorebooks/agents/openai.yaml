@@ -1,0 +1,9 @@
+interface:
+  display_name: Lumiverse Lorebook Forge
+  short_description: Build rigorous Lumiverse lorebooks on mobile
+  default_prompt: Use $forge-lumiverse-lorebooks to turn my world idea or source material
+    into an audited Lumiverse lorebook package.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

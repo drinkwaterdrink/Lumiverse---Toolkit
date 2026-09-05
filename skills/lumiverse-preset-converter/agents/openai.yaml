@@ -1,0 +1,10 @@
+interface:
+  display_name: Lumiverse Preset Converter
+  short_description: Convert SillyTavern presets into native Looms
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+  brand_color: '#7C5CFC'
+  default_prompt: Use $lumiverse-preset-converter to audit and convert this SillyTavern
+    Chat Completion preset into an import-ready Lumiverse Loom.
+policy:
+  allow_implicit_invocation: true

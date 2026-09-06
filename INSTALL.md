@@ -1,6 +1,6 @@
 # Install Lumiverse Toolkit
 
-Lumiverse Toolkit `0.4.0+codex.20260906063321` bundles six skills. It has no MCP
+Lumiverse Toolkit `0.5.0+codex.20260906074039` bundles six skills. It has no MCP
 server, external account connection, or hooks. Python 3.10+ is required for
 bundled validators and CHARX packaging; Node.js is required for the preset Regex
 checker. Lorebook, world-building, and preset-conversion specialists are included
@@ -49,6 +49,8 @@ Starter prompts:
 - `@Lumiverse Project Steward Start a reusable Lumiverse project from this material. Track canon, artifacts, dependencies, blockers, and validation.`
 - `@Lumiverse Character Forge Create a rich Lumiverse character package. Treat my statements as canon, keep generated additions provisional, and protect {{user}} agency.`
 - `@Lumiverse Scenario Forge Turn this premise into a RICH SANDBOX scenario seed with an open first moment and no predetermined user feelings or decisions.`
+- `Use Idea Lab variants to give me four genuinely different directions for this vague premise, compare their trade-offs, and keep every direction provisional.`
+- `Use these wiki pages and notes to build a source ledger as of Chapter 20. Separate canon, adaptation choices, future facts, spoilers, and World Book candidates.`
 
 World Book work routes to **Forge Lumiverse Lorebooks** and SillyTavern Chat Completion preset conversion routes to **Lumiverse Preset Converter** when those specialist skills are available.
 

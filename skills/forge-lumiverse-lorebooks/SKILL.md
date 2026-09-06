@@ -24,7 +24,10 @@ Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.m
 [Evidence Model](../../shared/references/evidence-model.md). Consult
 [Artifact Ownership](../../shared/references/artifact-ownership.md) and the
 [Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md)
-for attachment, ownership, and native-feature decisions.
+for attachment, ownership, and native-feature decisions. Use
+[Idea Lab](../../shared/references/idea-lab.md) for architecture discovery and
+[Source Ingestion](../../shared/references/source-ingestion.md) for sourced
+books, provenance, timeframe, and spoiler partitions.
 
 ## Start correctly
 
@@ -110,6 +113,10 @@ Draft `03_LoreForge_Spec.json` using the bundled template. For every entry, auth
 - positive, negative, and collision tests
 
 Do not equate lore tier with prompt position. Choose position by the effect required at runtime.
+
+When a source ledger exists, begin with its grounded entry suggestions. Keep
+public facts, character knowledge, rumor/belief, and spoiler-bearing GM truth in
+the appropriate owners and activation paths.
 
 ### Phase 3 — Audit and repair loop
 

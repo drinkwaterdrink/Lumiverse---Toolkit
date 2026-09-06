@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lumiverse-toolkit.source-ledger/v1",
+  "type": "object",
+  "required": ["schema", "project_id", "status", "snapshot", "sources", "entities", "facts", "conflicts", "adaptations", "entry_suggestions"],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.source-ledger/v1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "review", "final"]},
+    "snapshot": {
+      "type": "object",
+      "required": ["kind", "label", "order"],
+      "properties": {
+        "kind": {"enum": ["date", "arc", "episode", "chapter", "era", "open"]},
+        "label": {"type": "string"},
+        "order": {"type": "number"}
+      },
+      "additionalProperties": true
+    },
+    "sources": {"type": "array"},
+    "entities": {"type": "array"},
+    "facts": {"type": "array"},
+    "conflicts": {"type": "array"},
+    "adaptations": {"type": "array"},
+    "entry_suggestions": {"type": "array"}
+  },
+  "additionalProperties": true
+}

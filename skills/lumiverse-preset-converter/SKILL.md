@@ -17,6 +17,10 @@ as a routing index, while the converter's SOP remains authoritative for the
 detailed migration audit. Do not expand this specialist into native preset
 creation.
 
+Use [Source Ingestion](../../shared/references/source-ingestion.md) only when
+creator notes, documentation, companion Regex, or preset variants need a
+provenance inventory as migration evidence. This does not make Preset Converter a native preset creator or a general wiki-ingestion tool.
+
 ## Evidence and references
 
 Use this order when evidence conflicts:

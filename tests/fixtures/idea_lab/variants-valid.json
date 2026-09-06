@@ -1,0 +1,48 @@
+{
+  "schema": "lumiverse-toolkit.idea-lab/v1",
+  "project_id": "project-night-station",
+  "route": "variants",
+  "brief": "A small station where the last train never arrives.",
+  "candidates": [
+    {
+      "id": "idea-station", "status": "provisional",
+      "direction_signature": "municipal timetable debt",
+      "premise": "The station keeps publishing arrivals for a town it owes years of missed service.",
+      "foundation": "Stranded-station mystery", "deviation": "The timetable is a municipal debt ledger.",
+      "scene_engine": "Clerks barter corrections while passengers contest who is owed a train.",
+      "recurring_pressure": "The board adds one overdue household each night.",
+      "world_motion": "The council edits the ledger before the weekly audit.",
+      "player_positions": ["traveler", "resident", "auditor"], "agency_risks": [],
+      "divergence_dimensions": ["institution", "player_position"], "artifact_profile": "narrator_world"
+    },
+    {
+      "id": "idea-household", "status": "provisional",
+      "direction_signature": "domestic platform tenancy",
+      "premise": "Three families legally live on one platform until service resumes.",
+      "foundation": "Domestic stranded travelers", "deviation": "Rail law turns the platform into protected housing.",
+      "scene_engine": "Meals, inspections, visitors, and privacy disputes collide with station operations.",
+      "recurring_pressure": "A housing inspector arrives every third morning.",
+      "world_motion": "Families negotiate rooms and challenge eviction notices without the user.",
+      "player_positions": ["guest", "worker", "relative"], "agency_risks": [],
+      "divergence_dimensions": ["scale", "relationship_topology"], "artifact_profile": "ensemble_scenario"
+    },
+    {
+      "id": "idea-signal", "status": "provisional",
+      "direction_signature": "signal operator future calls",
+      "premise": "A signal box receives mundane calls from trains scheduled decades later.",
+      "foundation": "Temporal railway mystery", "deviation": "Future callers mainly report ordinary maintenance failures.",
+      "scene_engine": "Operators decide which small warnings to act on without revealing the line.",
+      "recurring_pressure": "Each prevented failure changes who calls next.",
+      "world_motion": "Rail management traces unauthorized repairs and rotates staff.",
+      "player_positions": ["operator", "contractor", "passenger"], "agency_risks": [],
+      "divergence_dimensions": ["timeline", "power_distribution"], "artifact_profile": "character_with_world"
+    }
+  ],
+  "comparison": [
+    {"candidate_id": "idea-station", "strengths": ["institutional leverage"], "tradeoffs": ["needs a clear ledger rule"]},
+    {"candidate_id": "idea-household", "strengths": ["immediate social scenes"], "tradeoffs": ["smaller mystery scope"]},
+    {"candidate_id": "idea-signal", "strengths": ["strong temporal hook"], "tradeoffs": ["continuity tracking cost"]}
+  ],
+  "selected_candidate_id": null,
+  "validation": {"findings": []}
+}

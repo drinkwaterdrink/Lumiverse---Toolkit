@@ -25,15 +25,19 @@ Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.m
 [Evidence Model](../../shared/references/evidence-model.md). Use
 [Artifact Ownership](../../shared/references/artifact-ownership.md) and the
 [Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md)
-when field placement, linked lore, or native feature claims matter.
+when field placement, linked lore, or native feature claims matter. Use
+[Idea Lab](../../shared/references/idea-lab.md) for discovery and
+[Source Ingestion](../../shared/references/source-ingestion.md) for sourced or
+franchise characters.
 
 ## Workflow
 
 1. **Classify the operation.** Create, revise, audit, convert, or style-profile. Identify the desired deliverable: field content, authoring package, revised source file, or verified export.
-2. **Establish evidence.** Separate approved canon, source fields, technical documentation, provisional proposals, and unresolved choices. If a Project Steward record exists, use its relevant canon subset and stable artifact ID.
+2. **Establish evidence.** Separate approved canon, source fields, technical documentation, provisional proposals, and unresolved choices. For source builds, consume only facts valid at the temporal snapshot and respect each knowledge partition. If a Project Steward record exists, use its relevant canon subset and stable artifact ID.
 3. **Preserve before editing.** For imported cards, inventory the format, unknown keys, extensions, embedded World Book, assets, alternate modules, macros, and current values. Never rebuild a source record from a reduced field list.
 4. **Author by field purpose.** Follow [Lumiverse Character Contract](references/lumiverse-character-contract.md) and [Authoring and Audit](references/authoring-and-audit.md). Apply the shared quality kernel; build decisions, behavior, voice, knowledge limits, and lived details rather than adjective lists. Keep Description, Personality, Scenario, examples, and direct instructions functionally distinct.
 5. **Add optional modules deliberately.** Alternate fields, alternate avatars, expressions, and a World Book solve different problems. Use only requested or useful modules and preserve their documented selection/activation behavior.
+   Scan finished fields for World Book candidates, but move them only when dynamic loading improves the card without weakening core identity.
 6. **Package to the available evidence.** Default created cards to V3 CHARX using [CHARX Packaging](references/charx-packaging.md) and its bundled helper. For revisions, edit the complete source JSON and retain archive resources. For undocumented modules, report the limitation instead of inventing extension keys. Follow [Conversion and Preservation](references/conversion-and-preservation.md).
 7. **Audit the result.** Check field completeness, agency, knowledge boundaries, temporal state, relationship reciprocity, repetition, token cost, macro syntax, module mapping, asset presence, and preservation. Return an artifact passport with checks actually run.
 

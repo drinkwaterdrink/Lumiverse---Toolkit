@@ -12,6 +12,13 @@ Administrative labels and stable IDs may be generated, but label them as adminis
 
 ## Field recipe
 
+Before assigning fields, build a compact behavioral model: current want,
+pressure, misunderstanding, concealed fact, decision thresholds, coping method,
+and knowledge boundary. For major characters, sample behavior when relaxed,
+irritated, frightened, embarrassed, caught lying, under authority, and given
+authority. Use only the states relevant to the request; this is an internal
+quality tool, not a mandatory wall of output.
+
 ### Description
 
 Include essential identity, appearance when known, background, capabilities and limits, key relationships, knowledge boundaries, behavioral anchors, and facts the model should always know. Prefer observable specifics over adjective piles.
@@ -29,6 +36,11 @@ Define the starting situation, location, immediate pressure, and what remains op
 Each greeting should demonstrate voice, ground the location, present an actionable opening, and end with space for the user. Alternate greetings should change the situation or pressure—not merely paraphrase the same opening.
 
 Audit every greeting for imposed `{{user}}` movement, dialogue, internal state, attraction, consent, prior bond, ability, history, or next action.
+
+Run the greeting lab: check scene, recognizable voice, physical space,
+immediate pressure, agency, exposition load, and replay value. Alternate
+greetings must change at least one meaningful dimension such as location,
+pressure, relationship starting state, timeframe, or tone.
 
 ### Examples
 
@@ -51,6 +63,13 @@ Put usage guidance, source/provisional status, recommended modules/settings, kno
 - **Context cost:** remove repeated biography and move reusable setting detail to a World Book.
 - **Macros:** preserve `{{char}}`, `{{user}}`, and documented field macros exactly.
 - **Style profile:** when matching a reference, extract voice, rhythm, sensory density, formatting, humor, and boundary patterns; copy no protected prose.
+- **Distance test:** remove the name and appearance from sample behavior; if the
+  character becomes indistinguishable from a generic archetype, strengthen the
+  decision model or voice rather than adding cosmetic quirks.
+- **World Book candidates:** identify secondary people, places, institutions,
+  history, rules, and terminology that could move out of always-loaded fields.
+  Recommend the move; do not perform it automatically when consistency would
+  weaken.
 
 ## Output modes
 
@@ -58,4 +77,3 @@ Put usage guidance, source/provisional status, recommended modules/settings, kno
 - **STANDARD:** complete base fields, requested modules, concise passport.
 - **RICH:** complete fields, alternatives, examples, deeper consistency and token audit.
 - **AUDIT:** no creative rewrite unless requested; findings, evidence, severity, and suggested fixes.
-

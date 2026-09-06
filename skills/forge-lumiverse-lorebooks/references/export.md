@@ -20,15 +20,23 @@ World Forge can compile a validated neutral LoreForge book into the conservative
 embedded subset observed in imported V3 CHARX cards. Base entries serialize only
 `keys`, `content`, `constant`, `enabled`, and `insertion_order`. The compiler
 produces an omission manifest for non-default settings such as sticky, cooldown,
-groups, recursion, vectors, selective keys, or probability. Stable IDs remain in
-the source and manifest; serialized entry IDs are not invented. This is not a
-claim of full-fidelity native Lumiverse World Book export.
+groups, recursion, vectors, selective keys, or probability. Because those
+settings change activation semantics, the compiler blocks by default when any
+would be omitted. Use `--allow-reduced-fidelity` only after the user explicitly
+approves the loss; the decision is recorded in the compilation manifest and
+artifact passport. Stable IDs remain in the source and manifest; serialized
+entry IDs are not invented. This is not a claim of full-fidelity native
+Lumiverse World Book export.
 
 ```sh
 python3 scripts/compile_character_book.py 03_LoreForge_Spec.json \
   --book-id world --out-book character_book.json \
   --out-manifest character_book.compilation.json
 ```
+
+When a book uses advanced activation behavior, prefer a separate full-fidelity
+native World Book export and attach it after import rather than approving a
+reduced embedded copy merely for one-file convenience.
 
 ## 2. Native-template mode
 

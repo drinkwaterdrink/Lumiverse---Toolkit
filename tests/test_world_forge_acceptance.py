@@ -25,7 +25,9 @@ class WorldForgeAcceptanceTests(unittest.TestCase):
         card = json.loads((ROOT / "tests/fixtures/world_forge/narrator-card-valid.json").read_text(encoding="utf-8"))
         with tempfile.TemporaryDirectory() as tmp:
             output = Path(tmp) / "station-world.charx"
-            book, manifest = compiler.compile_character_book(source, "world")
+            book, manifest = compiler.compile_character_book(
+                source, "world", allow_reduced_fidelity=True
+            )
             card["data"]["character_book"] = book
             charx.package(card, output)
             with zipfile.ZipFile(output) as archive:
@@ -33,6 +35,7 @@ class WorldForgeAcceptanceTests(unittest.TestCase):
             self.assertEqual(result, card)
             self.assertEqual(len(result["data"]["character_book"]["entries"]), 3)
             self.assertFalse(manifest["native_lumiverse_full_fidelity"])
+            self.assertTrue(manifest["reduced_fidelity_approved"])
 
     def test_revision_preserves_unknown_archive_members(self):
         card = json.loads((ROOT / "tests/fixtures/world_forge/narrator-card-valid.json").read_text(encoding="utf-8"))

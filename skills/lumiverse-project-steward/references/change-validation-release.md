@@ -31,6 +31,12 @@ assumptions: [approved or provisional assumptions]
 
 An empty `lost` list means no loss was observed by the checks that actually ran; it is not proof of universal losslessness.
 
+For staged connected builds, the build ledger is the operational source of
+truth for artifact status, anchors, dependencies, skip reasons, and resumable
+batch progress. A specialist capability receipt records only what that
+specialist produced and which checks support it. Steward merges receipts; it
+does not promote `UNPROVEN` or `RUNTIME TEST REQUIRED` into a pass.
+
 ## Validation severities
 
 - `blocker`: agency violation, invalid structure preventing use, destructive unresolved loss, or a required user decision. Do not certify.
@@ -49,6 +55,8 @@ Before setting `release.status` to `released`:
 - no unresolved blockers remain;
 - majors are fixed or explicitly accepted by the user;
 - specialist validation evidence is attached;
+- required build-ledger gates are complete and every capability receipt matches
+  an actual release artifact;
 - manifest, changelog, known limitations, and rollback guidance are complete;
 - mobile-facing instructions are concise and filenames are clear.
 

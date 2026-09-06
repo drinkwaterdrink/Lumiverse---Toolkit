@@ -9,6 +9,18 @@ These sources govern Lumiverse technical behavior. User instructions and approve
 
 ## Reviewed inspiration
 
+### AndreiNicu/World-Forge
+
+- Source: <https://github.com/AndreiNicu/World-Forge>
+- License reported in the reviewed project: MIT
+- Code copied: none
+
+Adapted as original Lumiverse Toolkit concepts: staged discovery and
+architecture, resumable ledgers, independent audit and compile passes, arc versus
+sandbox planning, activation-test thinking, and capability-based handoffs.
+SillyTavern schemas, runtime assumptions, field names, and prompt syntax remain
+compatibility evidence only and were not promoted to Lumiverse facts.
+
 ### PoweringManipulation2/WorldBuilder
 
 - Source: <https://github.com/PoweringManipulation2/WorldBuilder>

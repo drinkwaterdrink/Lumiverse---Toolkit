@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.4.0 — Quality Foundation and Honest Evidence
+
+Version: `0.4.0+codex.20260906063321`
+
+### Added
+
+- Shared Creative Quality Kernel, agency, source-authority, artifact-ownership,
+  Lumiverse-capability, and evidence contracts.
+- Capability receipts and resumable build ledgers with dependency and artifact
+  gates.
+- Profile-aware package validation so simple character builds do not inherit
+  narrator-world requirements.
+- PASS/FAIL/UNPROVEN activation results and deterministic evidence fixtures.
+- Create-then-refine specialist routing, optional Interview/Idea Lab paths,
+  dynamic scenario sections, and optional routed consenting-adult intimacy.
+
+### Changed
+
+- Embedded Character Book compilation now requires explicit reduced-fidelity
+  approval before omitting unsupported advanced activation settings.
+- World packages remain preset-independent; native preset creation stays
+  separate from Preset Converter and World Forge.
+- Character, scenario, lorebook, world, steward, and converter workflows now
+  share one Lumiverse-native evidence and ownership vocabulary.
+
+### Boundaries
+
+- Full Idea Lab and source/wiki ingestion are routed concepts, scheduled for the
+  next milestone rather than falsely claimed as complete here.
+- Static activation simulation cannot certify vector similarity, probability,
+  timing, weighted selection, import, or model behavior.
+
 ## v0.3.0 — World Forge and Card Types
 
 ### Added

@@ -31,6 +31,12 @@ class MarketplaceContractTests(unittest.TestCase):
             },
         )
 
+    def test_marketplace_version_matches_plugin_manifest(self):
+        manifest = json.loads(
+            (ROOT / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(self.entry["version"], manifest["version"])
+
     def test_install_policy_is_explicit_and_opt_in(self):
         self.assertEqual(self.entry["policy"]["installation"], "AVAILABLE")
         self.assertEqual(self.entry["policy"]["authentication"], "ON_INSTALL")

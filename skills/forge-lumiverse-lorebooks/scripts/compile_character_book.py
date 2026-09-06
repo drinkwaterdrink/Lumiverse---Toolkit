@@ -26,7 +26,11 @@ ADVANCED_DEFAULTS = {
 }
 
 
-def compile_character_book(source: dict[str, Any], book_id: str) -> tuple[dict[str, Any], dict[str, Any]]:
+def compile_character_book(
+    source: dict[str, Any],
+    book_id: str,
+    allow_reduced_fidelity: bool = False,
+) -> tuple[dict[str, Any], dict[str, Any]]:
     findings = validate_spec.validate_spec(source)
     if findings.errors:
         raise ValueError("LoreForge source has errors: " + "; ".join(findings.errors))
@@ -52,6 +56,13 @@ def compile_character_book(source: dict[str, Any], book_id: str) -> tuple[dict[s
             non_default = [key for key in non_default if key != "priority"]
         if non_default:
             omitted[stable_id] = non_default
+    if omitted and not allow_reduced_fidelity:
+        details = "; ".join(f"{stable_id}: {', '.join(keys)}" for stable_id, keys in omitted.items())
+        raise ValueError(
+            "Embedded Character Book would require reduced fidelity because activation-semantic "
+            f"settings are not represented by the observed subset ({details}). "
+            "Pass allow_reduced_fidelity=True only after explicit approval."
+        )
     return {"entries": entries}, {
         "schema": "lumiverse-toolkit.character-book-compilation/v1",
         "source_schema": "loreforge.lumiverse.v1",
@@ -60,6 +71,7 @@ def compile_character_book(source: dict[str, Any], book_id: str) -> tuple[dict[s
         "target": "character_card_v3_embedded_book_observed_subset",
         "stable_id_map": stable_id_map,
         "omitted_settings": omitted,
+        "reduced_fidelity_approved": bool(omitted and allow_reduced_fidelity),
         "native_lumiverse_full_fidelity": False,
     }
 
@@ -70,12 +82,15 @@ def main() -> int:
     parser.add_argument("--book-id", required=True)
     parser.add_argument("--out-book", type=Path, required=True)
     parser.add_argument("--out-manifest", type=Path, required=True)
+    parser.add_argument("--allow-reduced-fidelity", action="store_true")
     args = parser.parse_args()
     if args.out_book.exists() or args.out_manifest.exists():
         raise SystemExit("ERROR: output already exists")
     try:
         source = json.loads(args.spec.read_text(encoding="utf-8"))
-        book, manifest = compile_character_book(source, args.book_id)
+        book, manifest = compile_character_book(
+            source, args.book_id, allow_reduced_fidelity=args.allow_reduced_fidelity
+        )
         args.out_book.write_text(json.dumps(book, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         args.out_manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     except (OSError, json.JSONDecodeError, ValueError) as exc:

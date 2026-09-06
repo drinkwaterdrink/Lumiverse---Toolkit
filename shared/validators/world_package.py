@@ -9,12 +9,23 @@ from typing import Any
 
 SCHEMA_ID = "lumiverse-toolkit.world-package/v1"
 PROFILES = {"single_character", "character_with_world", "narrator_world", "ensemble_scenario", "multi_card_world"}
-REQUIRED_ROLES = {"charx", "card_source", "loreforge_source", "import_guide", "artifact_passport"}
+BASE_REQUIRED_ROLES = {"charx", "card_source", "import_guide", "artifact_passport"}
+LORE_REQUIRED_ROLES = {"loreforge_source", "character_book_backup", "compilation_manifest"}
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 def _finding(code: str, path: str, message: str, severity: str = "major") -> dict[str, str]:
     return {"code": code, "path": path, "message": message, "severity": severity}
+
+
+def required_roles(profile: str) -> set[str]:
+    """Return artifact roles required by a package profile."""
+    required = set(BASE_REQUIRED_ROLES)
+    if profile in {"character_with_world", "narrator_world", "ensemble_scenario"}:
+        required.update(LORE_REQUIRED_ROLES)
+    elif profile == "multi_card_world":
+        required.update({"loreforge_source", "character_book_backup"})
+    return required
 
 
 def validate_world_package(manifest: Any, root: Path | None = None) -> list[dict[str, str]]:
@@ -66,13 +77,10 @@ def validate_world_package(manifest: Any, root: Path | None = None) -> list[dict
                 findings.append(_finding("missing-artifact-file", f"{path}.path", f"File does not exist: {relative}."))
             elif isinstance(digest, str) and SHA256.fullmatch(digest) and hashlib.sha256(file_path.read_bytes()).hexdigest() != digest:
                 findings.append(_finding("artifact-hash-mismatch", f"{path}.sha256", f"Hash does not match {relative}."))
-    required = set(REQUIRED_ROLES)
+    required = required_roles(str(manifest.get("profile")))
     if manifest.get("profile") == "multi_card_world":
-        required.add("character_book_backup")
         if sum(1 for a in artifacts if isinstance(a, dict) and a.get("role") == "charx") < 2:
             findings.append(_finding("profile-output-mismatch", "$.artifacts", "multi_card_world requires at least two CHARX artifacts."))
-    else:
-        required.update({"character_book_backup", "compilation_manifest"})
     for role in sorted(required - roles):
         findings.append(_finding("missing-required-artifact", "$.artifacts", f"Missing artifact role '{role}'."))
     return findings

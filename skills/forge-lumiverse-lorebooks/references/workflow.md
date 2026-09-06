@@ -25,7 +25,14 @@ Choose one primary operation:
 
 For a source conversion, establish an authority order. Prefer explicit current canon over older notes, user corrections over inference, and source-grounded facts over plausible filling.
 
-## 2. Phase 0 interview
+## 2. Phase 0 discovery
+
+Create then refine is the normal route for a sufficiently clear, low-risk brief:
+preserve the user's wording, draft the smallest viable spine and activation
+architecture, label inventions provisional, and invite focused correction. Use
+the full interview below only when requested or when unresolved canon,
+attachment, source authority, safety, or activation architecture would make a
+draft misleading.
 
 ### Mobile pacing
 
@@ -87,6 +94,11 @@ The three-tier idea is a content-ownership rule, not a prompt-position rule:
 3. mutable arc/scene/state truth
 
 Every fact gets one canonical home. Cross-reference; do not duplicate paragraphs.
+
+Select architecture from the project rather than entry count: direct keyword,
+layered keyword, recursive tree, hybrid keyword/vector, semantic-heavy
+reference, state/event, compact character-linked lore, sandbox pulse, or
+progressive reveal. Record why the chosen architecture fits and what it costs.
 
 ### Master-design gate
 

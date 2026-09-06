@@ -54,7 +54,10 @@ def valid_record():
                 "attraction",
                 "consent",
                 "decisions",
+                "relationships",
+                "abilities",
                 "backstory",
+                "next_voluntary_action",
             ],
         },
         "policies": [],
@@ -133,6 +136,13 @@ class ProjectRecordContractTests(unittest.TestCase):
     def test_incomplete_agency_reservations_are_blocking(self):
         record = valid_record()
         record["agency"]["reserved"].remove("consent")
+        findings = self.validator.validate_project_record(record)
+        result = next(item for item in findings if item["code"] == "incomplete-agency-contract")
+        self.assertEqual(result["severity"], "blocker")
+
+    def test_all_normalized_agency_reservations_are_required(self):
+        record = valid_record()
+        record["agency"]["reserved"].remove("next_voluntary_action")
         findings = self.validator.validate_project_record(record)
         result = next(item for item in findings if item["code"] == "incomplete-agency-contract")
         self.assertEqual(result["severity"], "blocker")

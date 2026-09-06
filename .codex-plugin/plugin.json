@@ -1,6 +1,6 @@
 {
   "name": "lumiverse-toolkit",
-  "version": "0.3.0+codex.20260905222230",
+  "version": "0.4.0+codex.20260906063321",
   "description": "Create, revise, audit, and package connected Lumiverse roleplay artifacts with specialized skills and shared project context.",
   "author": {
     "name": "Trent Ouellette"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Lumiverse Toolkit",
     "shortDescription": "Build and certify connected Lumiverse artifacts.",
-    "longDescription": "Lumiverse Toolkit coordinates project canon, characters, scenarios, lorebooks, and presets while preserving user intent and producing import-ready artifacts.",
+    "longDescription": "Lumiverse Toolkit coordinates canon, characters, scenarios, World Books, worlds, and preset conversion through Lumiverse-native quality and evidence contracts.",
     "developerName": "Trent Ouellette",
     "category": "Productivity",
     "capabilities": [],

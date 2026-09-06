@@ -64,7 +64,7 @@ For every conditional entry, test:
 
 At pack level, test each user-supplied scene. Build an expected active set and an expected inactive set. Flag missing coverage and irrelevant activation.
 
-The bundled simulator supports literal and Python-regex matching, case sensitivity, whole-word behavior, AND/OR/NOT/NOT All secondary logic, disabled/constant state, bounded recursion, and a simplified group/priority/budget pass. Python regex behavior may differ from Lumiverse's runtime. It does not reproduce semantic embeddings, persistent timers, probability rolls, or Lumiverse's complete internal scanner. Confirm those with Dry Run and Diagnostics.
+The bundled simulator supports literal and Python-regex matching, case sensitivity, whole-word behavior, AND/OR/NOT/NOT All secondary logic, disabled/constant state, bounded recursion, and a simplified group/priority/budget pass. Python regex behavior may differ from Lumiverse's runtime. Each case reports `PASS`, `FAIL`, or `UNPROVEN`. Semantic embeddings, probability rolls, weighted selection, and persistent sticky/cooldown/delay behavior make the affected case `UNPROVEN`; they never pass merely because the bounded simulator has no deterministic contradiction. Confirm those mechanics with Dry Run and Diagnostics.
 
 ## 4. Budget and runtime checks
 

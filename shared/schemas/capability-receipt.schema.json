@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lumiverse-toolkit.capability-receipt/v1",
+  "type": "object",
+  "required": ["schema", "artifact_id", "target", "capabilities"],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.capability-receipt/v1"},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "target": {
+      "type": "object",
+      "required": ["application", "lumiverse_build"],
+      "properties": {
+        "application": {"const": "Lumiverse"},
+        "lumiverse_build": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "maturity", "evidence", "dependencies", "limitations"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "maturity": {"enum": ["concept", "static_validated", "simulated", "runtime_observed", "certified_for_build"]},
+          "observation_kind": {"enum": ["user_reported", "captured_diagnostics"]},
+          "evidence": {"type": "array", "items": {"type": "object"}},
+          "dependencies": {"type": "array"},
+          "limitations": {"type": "array"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

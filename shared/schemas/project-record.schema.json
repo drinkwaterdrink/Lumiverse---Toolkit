@@ -43,7 +43,31 @@
     },
     "authority": {"type": "object"},
     "preferences": {"type": "object"},
-    "agency": {"type": "object"},
+    "agency": {
+      "type": "object",
+      "required": ["protected_subject", "reserved"],
+      "properties": {
+        "protected_subject": {"const": "{{user}}"},
+        "reserved": {
+          "type": "array",
+          "items": {"type": "string"},
+          "allOf": [
+            {"contains": {"const": "actions"}},
+            {"contains": {"const": "dialogue"}},
+            {"contains": {"const": "thoughts"}},
+            {"contains": {"const": "feelings"}},
+            {"contains": {"const": "attraction"}},
+            {"contains": {"const": "consent"}},
+            {"contains": {"const": "decisions"}},
+            {"contains": {"const": "relationships"}},
+            {"contains": {"const": "abilities"}},
+            {"contains": {"const": "backstory"}},
+            {"contains": {"const": "next_voluntary_action"}}
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
     "policies": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
     "entities": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},
     "canon": {"type": "array", "items": {"$ref": "#/$defs/idObject"}},

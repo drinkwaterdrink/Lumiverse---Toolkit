@@ -2,7 +2,7 @@
 
 ## Modes
 
-- **QUICK:** one compact screen; all six sections; one strong pressure, a small cast, one opening, and a few expansion hooks.
+- **QUICK:** one compact screen using `CORE → OPENING → EXPANSION NOTES`; one strong pressure, a small cast, and a few expansion hooks.
 - **STANDARD:** complete playable seed with differentiated cast, two or more pressures, conditional clocks, and a compact pressure graph.
 - **RICH:** deeper cast texture, secrets and discovery routes, timeline/state details, multiple clocks, callbacks, and audit notes.
 - **SANDBOX:** emphasizes independent NPC motion, modular scene engines, multiple entry points, recombination, and offscreen consequences without a main quest.
@@ -11,7 +11,16 @@
 
 Modes can combine, such as `RICH SANDBOX` or `INTIMATE FRESH START`. Create, revise, expand, and audit are operations rather than density modes.
 
-## Canonical output
+## Dynamic sections
+
+Use only the sections that materially improve play. QUICK uses the compact
+three-section spine above. STANDARD normally adds USER, NPC SEEDS, and CONFLICT
+SEEDS. RICH and SANDBOX may add WORLD SEEDS, WORLD BOUNDARIES, LOCATIONS,
+FACTIONS, NPC RELATIONSHIPS, ITEMS/SYSTEMS, SECRETS, HISTORY, AESTHETICS,
+SPEECH, NAMING, PLOT HOOKS, and LOREBOOK EXPANSION FLAGS as warranted. Do not
+emit empty headings or force every premise into one outline.
+
+## Section purposes
 
 Use these headings in this order:
 
@@ -19,15 +28,15 @@ Use these headings in this order:
 
 Premise, place, timeframe, tone, immediate situation, canon/provisional boundary, and the promise of play.
 
-### USER
+### USER (when needed)
 
 Only supplied user facts, role boundaries, knowledge/ability limits, agency reservation, and open choices. Do not generate a personality or desired outcome for `{{user}}`.
 
-### NPC
+### NPC SEEDS (when needed)
 
 Each important NPC needs a distinct goal, pressure, behavior, knowledge, uncertainty, and something they may do without user involvement. Generated names and facts remain provisional.
 
-### CONFLICT
+### CONFLICT SEEDS (when needed)
 
 Competing pressures, secrets, discovery routes, clocks, conditional consequences, knowledge boundaries, and the pressure graph. Conflicts should intersect without collapsing into one quest.
 
@@ -35,7 +44,7 @@ Competing pressures, secrets, discovery routes, clocks, conditional consequences
 
 A present-tense playable first moment with concrete sensory/actionable information. NPCs and the environment may act. Leave several natural response spaces and do not complete `{{user}}`'s next voluntary action.
 
-### EXPANSION
+### EXPANSION NOTES
 
 Modular branches, callbacks, escalation/de-escalation conditions, state changes, alternate entry points, and lorebook growth flags. Phrase them as conditions, not chapters.
 
@@ -46,4 +55,3 @@ Seed locked.
 ```
 
 Place no text after the marker.
-

@@ -14,6 +14,22 @@ The provided Lumiverse documentation names supported import/export workflows and
 
 Keep `03_LoreForge_Spec.json` as the canonical platform-neutral artifact. It records documented concepts using readable labels.
 
+### Embedded Character Book mode
+
+World Forge can compile a validated neutral LoreForge book into the conservative
+embedded subset observed in imported V3 CHARX cards. Base entries serialize only
+`keys`, `content`, `constant`, `enabled`, and `insertion_order`. The compiler
+produces an omission manifest for non-default settings such as sticky, cooldown,
+groups, recursion, vectors, selective keys, or probability. Stable IDs remain in
+the source and manifest; serialized entry IDs are not invented. This is not a
+claim of full-fidelity native Lumiverse World Book export.
+
+```sh
+python3 scripts/compile_character_book.py 03_LoreForge_Spec.json \
+  --book-id world --out-book character_book.json \
+  --out-manifest character_book.compilation.json
+```
+
 ## 2. Native-template mode
 
 Use when the user provides a harmless World Book exported directly from their current Lumiverse installation.

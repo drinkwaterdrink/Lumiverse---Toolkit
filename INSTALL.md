@@ -30,6 +30,14 @@ Lumiverse Toolkit v0.2 bundles five skills. It has no MCP server, external accou
 
 ## Use it
 
+World Forge is available after installing the v0.3 package. Try this first:
+
+```text
+Use Lumiverse World Forge to create a small narrator_world blueprint with one setting,
+two NPCs, and two alternate greetings. Stop before generation and report which specialist
+will own the card, scenario, lore, and package validation.
+```
+
 Describe the outcome directly and allow automatic routing, or type `@` in ChatGPT and select a bundled skill.
 
 Starter prompts:

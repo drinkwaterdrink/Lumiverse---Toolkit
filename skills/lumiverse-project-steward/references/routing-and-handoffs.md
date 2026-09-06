@@ -20,6 +20,7 @@ Use Project Steward when any of these is true:
 | Scenario seed | Scenario Forge | relevant cast/world facts, temporal state, agency contract, desired mode |
 | World Book/lorebook | Lorebook Forge | canon subset, ownership, activation targets, budget, source evidence |
 | Preset conversion/audit | Preset Converter | source preset, target docs snapshot, scoped policies, tracker selection, preservation requirements |
+| Narrator world, ensemble scenario, embedded-lorebook card, or multi-card world | World Forge | world-project record, canon subset, agency contract, selected profile, intended outputs |
 
 All four specialists in this table are bundled in v0.2 under the plugin's skills directory. Route World Books to `forge-lumiverse-lorebooks` and ST Chat Completion migration to `lumiverse-preset-converter`. Native preset creation remains outside the converter's scope. If a skill fails to load or no matching specialist exists for other work, retain the task as `unresolved` or use an explicitly approved manual workflow.
 
@@ -49,3 +50,7 @@ return:
 Accept returned creative additions as `provisional` unless the user previously approved them. Merge by stable ID. Keep a change log and preserve unfamiliar fields. If a specialist reports an unsupported transform or loss, add a finding and passport note; do not hide it behind a successful-file claim.
 
 Do not reproduce specialist internals inside Steward. Invoke `forge-lumiverse-lorebooks` for World Books and `lumiverse-preset-converter` for SillyTavern Chat Completion preset migration. The specialist remains usable without a project record; Steward only adds cross-artifact context and merges the returned evidence.
+
+Plain single-character requests remain direct to Character Forge. Standalone World
+Book requests remain direct to Forge Lumiverse Lorebooks. World Forge coordinates
+only when the requested package connects multiple artifacts.

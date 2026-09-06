@@ -70,6 +70,14 @@ class ConnectedProjectAcceptanceTests(unittest.TestCase):
         self.assertIn("unresolved-source-preset", unresolved)
         self.assertEqual(self.project["release"]["status"], "unreleased")
 
+    def test_world_forge_routing_and_boundaries_are_documented(self):
+        routing = (ROOT / "skills/lumiverse-project-steward/references/routing-and-handoffs.md").read_text(encoding="utf-8")
+        world_skill = (ROOT / "skills/lumiverse-world-forge/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("World Forge", routing)
+        self.assertIn("narrator_world", world_skill)
+        self.assertIn("ensemble_scenario", world_skill)
+        self.assertIn("compile_character_book.py", world_skill)
+
 
 if __name__ == "__main__":
     unittest.main()

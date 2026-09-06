@@ -5,6 +5,10 @@ description: Use when creating, revising, expanding, or auditing a Lumiverse rol
 
 # Lumiverse Scenario Forge
 
+For connected narrator-world and ensemble-card builds, return scenario material
+to `lumiverse-world-forge` as bounded input. Do not decide card field placement
+or package a lorebook inside the scenario specialist.
+
 Turn a premise into playable pressures, not a predetermined story.
 
 ## Workflow

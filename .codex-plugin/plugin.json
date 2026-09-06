@@ -1,6 +1,6 @@
 {
   "name": "lumiverse-toolkit",
-  "version": "0.2.0+codex.20260905202809",
+  "version": "0.3.0+codex.20260905222230",
   "description": "Create, revise, audit, and package connected Lumiverse roleplay artifacts with specialized skills and shared project context.",
   "author": {
     "name": "Trent Ouellette"

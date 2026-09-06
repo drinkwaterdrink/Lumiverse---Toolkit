@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lumiverse-toolkit.world-project/v1",
+  "type": "object",
+  "required": ["schema", "project_id", "build", "interaction", "agency", "entity_ids", "temporal", "relationships", "artifacts", "batches", "validation"],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.world-project/v1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "build": {
+      "type": "object",
+      "required": ["id", "operation", "profile", "mode", "status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "operation": {"enum": ["create", "revise", "audit", "convert"]},
+        "profile": {"enum": ["single_character", "character_with_world", "narrator_world", "ensemble_scenario", "multi_card_world"]},
+        "mode": {"enum": ["guided", "fast", "full_detail"]},
+        "status": {"enum": ["draft", "approved", "building", "complete"]}
+      }
+    },
+    "interaction": {"type": "object", "required": ["primary_identity", "narrator_scope", "user_role"]},
+    "agency": {"type": "object", "required": ["protected_subject", "reserved"]},
+    "entity_ids": {"type": "array", "items": {"type": "string"}},
+    "temporal": {"type": "array", "items": {"type": "object"}},
+    "relationships": {"type": "array", "items": {"type": "object"}},
+    "artifacts": {"type": "array", "items": {"type": "object"}},
+    "batches": {"type": "array", "items": {"type": "object"}},
+    "validation": {"type": "object"},
+    "extensions": {"type": "object"}
+  },
+  "additionalProperties": true
+}

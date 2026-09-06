@@ -7,6 +7,11 @@ description: Use when creating, revising, expanding, converting, or auditing a L
 
 Build playable characters while preserving the source, user agency, and Lumiverse-native behavior.
 
+When a request asks for a narrator world, ensemble scenario, or connected
+multi-card package, delegate profile selection and cross-artifact assembly to
+`lumiverse-world-forge`; Character Forge remains responsible for card fields and
+CHARX packaging.
+
 ## Workflow
 
 1. **Classify the operation.** Create, revise, audit, convert, or style-profile. Identify the desired deliverable: field content, authoring package, revised source file, or verified export.

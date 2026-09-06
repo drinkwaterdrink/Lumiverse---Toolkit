@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.3.0 — World Forge and Card Types
+
+### Added
+
+- World Forge profiles for single-character, character-with-world, narrator-world, ensemble-scenario, and multi-card-world packages.
+- World project and package manifest validators with temporal, relationship, agency, profile, path, and hash checks.
+- Conservative embedded Character Book compiler for V3 CHARX packages.
+- Narrator-world CHARX acceptance fixtures and source/archive preservation tests.
+
+### Boundaries
+
+- Advanced World Book settings are reported in an omission manifest when the target card structure does not establish their serialized keys.
+- Native full-fidelity World Book export, live activation, and model behavior remain separately unverified.
+
 ## v0.1.0 — Initial public test release
 
 ### Added

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lumiverse-toolkit.world-package/v1",
+  "type": "object",
+  "required": ["schema", "project_id", "profile", "artifacts", "native_lumiverse_full_fidelity"],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.world-package/v1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "profile": {"type": "string"},
+    "native_lumiverse_full_fidelity": {"type": "boolean"},
+    "native_template_evidence": {"type": "array"},
+    "artifacts": {"type": "array", "items": {"type": "object"}},
+    "findings": {"type": "array"}
+  },
+  "additionalProperties": true
+}

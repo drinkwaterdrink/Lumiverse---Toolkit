@@ -5,6 +5,10 @@ description: Create, expand, convert, revise, or audit high-quality Lumiverse Wo
 
 # Forge Lumiverse Lorebooks
 
+World Forge may call this specialist for canonical entries and then compile a
+validated book through `scripts/compile_character_book.py`. Standalone lorebook
+requests still route directly here.
+
 Build a source-faithful, activation-engineered lorebook package through short mobile-friendly interviews, explicit quality gates, deterministic validation, and resumable project files.
 
 ## Start correctly

@@ -1,0 +1,10 @@
+{
+  "schema": "lumiverse-toolkit.world-project/v1",
+  "project_id": "project-nightshift",
+  "build": {"id": "build-nightshift-cast", "operation": "create", "profile": "multi_card_world", "mode": "full_detail", "status": "approved"},
+  "interaction": {"primary_identity": "independent_characters", "narrator_scope": "none", "user_role": "open"},
+  "agency": {"protected_subject": "{{user}}", "reserved": ["actions", "dialogue", "thoughts", "feelings", "attraction", "consent", "decisions", "relationships", "abilities", "backstory", "next_voluntary_action"]},
+  "entity_ids": ["entity-a", "entity-b"], "temporal": [], "relationships": [],
+  "artifacts": [{"id": "card-a", "type": "character_card", "owner": "lumiverse-character-forge"}, {"id": "card-b", "type": "character_card", "owner": "lumiverse-character-forge"}, {"id": "shared-book", "type": "shared_character_book", "owner": "forge-lumiverse-lorebooks"}],
+  "batches": [], "validation": {"status": "not_run", "findings": []}
+}

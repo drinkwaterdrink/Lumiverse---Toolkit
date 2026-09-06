@@ -1,0 +1,8 @@
+{
+  "schema": "lumiverse-toolkit.world-project/v1",
+  "project_id": "",
+  "build": {"id": "", "operation": "create", "profile": "narrator_world", "mode": "guided", "status": "draft"},
+  "interaction": {"primary_identity": "world_narrator", "narrator_scope": "environment_and_non_user_characters", "user_role": "open"},
+  "agency": {"protected_subject": "{{user}}", "reserved": ["actions", "dialogue", "thoughts", "feelings", "attraction", "consent", "decisions", "relationships", "abilities", "backstory", "next_voluntary_action"]},
+  "entity_ids": [], "temporal": [], "relationships": [], "artifacts": [], "batches": [], "validation": {"status": "not_run", "findings": []}, "extensions": {}
+}

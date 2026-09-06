@@ -1,0 +1,11 @@
+{
+  "schema": "lumiverse-toolkit.world-project/v1",
+  "project_id": "project-saltmere",
+  "build": {"id": "build-saltmere-world", "operation": "create", "profile": "narrator_world", "mode": "guided", "status": "approved"},
+  "interaction": {"primary_identity": "world_narrator", "narrator_scope": "environment_and_non_user_characters", "user_role": "open"},
+  "agency": {"protected_subject": "{{user}}", "reserved": ["actions", "dialogue", "thoughts", "feelings", "attraction", "consent", "decisions", "relationships", "abilities", "backstory", "next_voluntary_action"]},
+  "entity_ids": ["entity-mara", "entity-dispatcher", "entity-station"],
+  "temporal": [], "relationships": [],
+  "artifacts": [{"id": "artifact-card", "type": "character_card", "owner": "lumiverse-character-forge"}, {"id": "artifact-book", "type": "embedded_character_book", "owner": "forge-lumiverse-lorebooks"}],
+  "batches": [], "validation": {"status": "not_run", "findings": []}, "extensions": {"future": true}
+}

@@ -4,11 +4,12 @@ An installable personal ChatGPT/Codex plugin for creating, revising, auditing, a
 
 [Installation guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Verification report](docs/v0.1-verification-report.md)
 
-## v0.2 bundled skills
+## v0.3 bundled skills
 
 - **Lumiverse Project Steward** — shared canon, project records, cross-artifact changes, specialist routing, validation, and release coordination.
 - **Lumiverse Character Forge** — source-faithful character creation, revision, conversion, module planning, agency audits, and preservation passports.
 - **Lumiverse Scenario Forge** — open scenario seeds, pressure graphs, agency-safe openings, conditional clocks, and modular expansion.
+- **Lumiverse World Forge** — narrator worlds, ensemble scenarios, character-plus-world cards, and multi-card shared settings.
 
 Also included in the same installation:
 
@@ -49,6 +50,10 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 The v0.1 package passed 24 deterministic tests plus 15 GREEN behavior samples. This certifies the plugin structure, marketplace metadata, contracts, and routing behavior—not future artifacts that have not yet been imported or exercised in Lumiverse.
+
+World Forge's embedded Character Book compiler targets the observed V3 CHARX
+subset and reports omitted advanced settings. It does not claim full-fidelity
+native World Book serialization without a native Lumiverse template.
 
 ## Roadmap
 

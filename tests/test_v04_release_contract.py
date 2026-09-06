@@ -8,13 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class V04ReleaseContractTests(unittest.TestCase):
-    def test_plugin_version_is_v04_and_documented(self):
-        manifest = json.loads((ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
-        version = manifest["version"]
-        self.assertRegex(version, r"^0\.4\.0\+codex\.\d{14}$")
-        for relative in ("README.md", "CHANGELOG.md", "INSTALL.md", "docs/v0.4-verification-report.md"):
-            text = (ROOT / relative).read_text(encoding="utf-8")
-            self.assertIn(version, text, relative)
+    def test_v04_verification_history_is_retained(self):
+        text = (ROOT / "docs/v0.4-verification-report.md").read_text(encoding="utf-8")
+        self.assertRegex(text, r"0\.4\.0\+codex\.\d{14}")
 
     def test_all_six_skills_are_registered(self):
         manifest = json.loads((ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
@@ -37,9 +33,8 @@ class V04ReleaseContractTests(unittest.TestCase):
         ):
             self.assertIn(phrase, report)
 
-    def test_readme_points_to_current_report(self):
+    def test_readme_no_longer_claims_v03_bundle(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("docs/v0.4-verification-report.md", readme)
         self.assertNotIn("## v0.3 bundled skills", readme)
 
     def test_no_broken_relative_markdown_links(self):

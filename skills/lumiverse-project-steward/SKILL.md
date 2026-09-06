@@ -14,6 +14,8 @@ Read [Agency Contract](../../shared/references/agency-contract.md),
 [Evidence Model](../../shared/references/evidence-model.md),
 [Artifact Ownership](../../shared/references/artifact-ownership.md), and the
 [Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md).
+Read [Source Ingestion](../../shared/references/source-ingestion.md) for sourced
+projects and source conflict handling.
 For large or resumable builds, require the shared build ledger and capability
 receipts at artifact gates.
 
@@ -26,6 +28,10 @@ receipts at artifact gates.
 5. **Prepare focused handoffs.** Give each specialist only its artifact, the relevant canon subset, user constraints, dependencies, and required return contract. Follow [Routing and Handoffs](references/routing-and-handoffs.md).
 6. **Merge evidence.** Update the record from returned artifacts and passports. Preserve unknown fields and untouched settings. Record losses, transforms, unresolved items, decisions, and validation findings explicitly.
 7. **Audit or release.** Follow [Changes, Validation, and Releases](references/change-validation-release.md). A blocker prevents certification; a major prevents release unless the user explicitly accepts it. Never claim an edit, validation, import test, or install succeeded without evidence.
+
+Validate shared discovery records with `shared/validators/idea_lab.py` and
+source projects with `shared/validators/source_ledger.py`. Keep unselected ideas
+provisional; keep unresolved source conflicts out of finalized artifacts.
 
 Intimacy support is an **optional routed module**, never a universal house
 style. Route it only for an explicit, age-safe request with a consenting-adult

@@ -1,0 +1,30 @@
+{
+  "schema": "lumiverse-toolkit.source-ledger/v1",
+  "project_id": "project-station-canon",
+  "status": "final",
+  "snapshot": {"kind": "chapter", "label": "Chapter 20", "order": 20},
+  "sources": [
+    {"id": "source-official", "type": "official", "authority": "primary", "title": "Official setting guide", "locator": "https://example.invalid/official", "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "relevance": "include", "relevance_reason": "Establishes the station timeline.", "alias_of": null},
+    {"id": "source-notes", "type": "user_notes", "authority": "user", "title": "Roleplay adaptation notes", "locator": "notes.md", "content_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "relevance": "include", "relevance_reason": "Defines the requested adaptation.", "alias_of": null},
+    {"id": "source-nav", "type": "wiki", "authority": "secondary", "title": "Navigation index", "locator": "https://example.invalid/nav", "content_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "relevance": "exclude", "relevance_reason": "Navigation page contains no setting facts.", "alias_of": null}
+  ],
+  "entities": [
+    {"id": "entity-station", "type": "location", "names": ["Blackwater Station"], "source_ids": ["source-official"]},
+    {"id": "entity-clerk", "type": "character", "names": ["Mara Vale"], "source_ids": ["source-official", "source-notes"]}
+  ],
+  "facts": [
+    {"id": "fact-service", "subject_id": "entity-station", "statement": "The station remains in public service through Chapter 20.", "status": "CANON", "source_ids": ["source-official"], "valid_from": {"label": "Chapter 1", "order": 1}, "valid_to": {"label": "Chapter 24", "order": 24}, "visibility": "public", "knowers": ["entity-clerk"], "owner": "world_book", "active_at_snapshot": true},
+    {"id": "fact-future", "subject_id": "entity-station", "statement": "The north platform closes in Chapter 30.", "status": "CANON", "source_ids": ["source-official"], "valid_from": {"label": "Chapter 30", "order": 30}, "valid_to": null, "visibility": "public", "knowers": [], "owner": "world_book", "active_at_snapshot": false},
+    {"id": "fact-lockbox", "subject_id": "entity-station", "statement": "The sealed dispatch box contains the original closure order.", "status": "CANON", "source_ids": ["source-official"], "valid_from": {"label": "Chapter 1", "order": 1}, "valid_to": null, "visibility": "gm_truth", "knowers": [], "owner": "world_book", "active_at_snapshot": true},
+    {"id": "fact-user-role", "subject_id": "entity-clerk", "statement": "The adaptation leaves the visitor role open for {{user}}.", "status": "USER_CANON", "source_ids": ["source-notes"], "valid_from": {"label": "Opening", "order": 20}, "valid_to": null, "visibility": "public", "knowers": [], "owner": "scenario", "active_at_snapshot": true}
+  ],
+  "conflicts": [
+    {"id": "conflict-role", "fact_ids": ["fact-service", "fact-user-role"], "status": "resolved", "resolution": "The source timeline remains canon while the user occupies an adaptation-specific open role."}
+  ],
+  "adaptations": [
+    {"id": "adapt-open-role", "source_fact_ids": ["fact-service"], "statement": "The source station timeline is retained, but no source protagonist role is assigned to {{user}}.", "status": "approved", "reason": "Preserve player agency."}
+  ],
+  "entry_suggestions": [
+    {"id": "entry-station", "entity_ids": ["entity-station"], "fact_ids": ["fact-service", "fact-lockbox"], "target": "world_book", "activation_intent": "Direct station-name keyword with reveal-gated lockbox child.", "status": "provisional"}
+  ]
+}

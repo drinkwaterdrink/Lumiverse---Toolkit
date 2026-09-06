@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.5.0 — Idea Lab and Source Ingestion
+
+Version: `0.5.0+codex.20260906074039`
+
+### Added
+
+- Shared Idea Lab with direct, variants, interview, anti-generic, and combine
+  routes; candidate divergence and comparison are validated.
+- Source ledger for official sources, wikis, fan wikis, user notes, texts,
+  transcripts, cards, World Books, reference databases, and mixed collections.
+- Provenance-bearing fact statuses, relevance/exclusion decisions, temporal
+  snapshots, knowledge/spoiler partitions, conflict resolution, adaptation
+  choices, entity inventory, and grounded entry suggestions.
+- Deterministic checks for duplicate source content, shallow idea variants,
+  accidental canonization, future-knowledge leakage, hidden-truth ownership,
+  dangling provenance, and ungrounded lore suggestions.
+
+### Changed
+
+- All creative specialists route into Idea Lab only when discovery helps.
+- All six specialists can consume the source-ingestion contract without turning
+  Preset Converter into a native preset creator.
+- World Forge distinguishes large Databank reference corpora from concise,
+  activation-designed World Book facts.
+
+### Boundaries
+
+- No crawler bypasses access controls, authentication, rate limits, or robots
+  policy. Inaccessible sources require a user-supplied export or excerpt.
+- Structural source validation is not factual certification of a wiki, novel
+  interpretation, or live Lumiverse behavior.
+
 ## v0.4.0 — Quality Foundation and Honest Evidence
 
 Version: `0.4.0+codex.20260906063321`

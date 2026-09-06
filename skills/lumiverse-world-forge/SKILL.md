@@ -26,6 +26,9 @@ Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.m
 [Evidence Model](../../shared/references/evidence-model.md),
 [Artifact Ownership](../../shared/references/artifact-ownership.md), and the
 [Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md).
+Use [Idea Lab](../../shared/references/idea-lab.md) for discovery and
+[Source Ingestion](../../shared/references/source-ingestion.md) for franchise,
+wiki, novel, card, World Book, or mixed-source projects.
 
 ## Profiles
 
@@ -38,7 +41,8 @@ Use World Forge when the request connects two or more of those artifacts.
 
 1. Read [Profiles and Routing](references/profiles-and-routing.md) and classify the interaction model; also read [Build Workflow](references/build-workflow.md).
 2. Establish approved canon, provisional additions, temporal facts, relationship
-   claims, and the complete `{{user}}` agency contract.
+   claims, the source ledger when applicable, and the complete `{{user}}` agency
+   contract.
 3. Present a compact blueprint when the selected profile changes the output.
 4. Delegate scenario structure to Scenario Forge, card fields to Character Forge,
    and lore entries to Forge Lumiverse Lorebooks.
@@ -49,6 +53,11 @@ Use World Forge when the request connects two or more of those artifacts.
    Character Forge's `scripts/package_charx.py`.
 8. Produce the CHARX, card JSON, neutral LoreForge source, Character Book backup,
    compilation manifest, import guide, and artifact passport.
+
+Keep large source corpora in Databank when retrieval is more appropriate than
+conditional lore; World Books receive concise playable facts and activation
+intent. Do not scrape through access controls. Mark inaccessible sources
+unavailable and request an export or excerpt only when needed.
 
 ## Narrator contract
 

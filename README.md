@@ -2,11 +2,11 @@
 
 An installable personal ChatGPT/Codex plugin for creating, revising, auditing, and coordinating Lumiverse roleplay artifacts.
 
-[Installation guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Verification report](docs/v0.4-verification-report.md)
+[Installation guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Verification report](docs/v0.5-verification-report.md)
 
-Current version: `0.4.0+codex.20260906063321`.
+Current version: `0.5.0+codex.20260906074039`.
 
-## v0.4 bundled skills
+## v0.5 bundled skills
 
 - **Lumiverse Project Steward** — shared canon, project records, cross-artifact changes, specialist routing, validation, and release coordination.
 - **Lumiverse Character Forge** — source-faithful character creation, revision, conversion, module planning, agency audits, and preservation passports.
@@ -32,6 +32,12 @@ Create then refine is the default. Interview and Idea Lab paths are optional for
 discovery-heavy work. World packages do not require a dedicated preset, and
 native preset creation remains a separate roadmap module.
 
+The Idea Lab can generate and compare genuinely divergent directions or improve
+a generic premise without forcing a questionnaire. Source ingestion can organize
+wikis, franchise material, excerpts, notes, cards, World Books, and mixed source
+sets with provenance, temporal snapshots, spoiler/knowledge partitions,
+conflicts, adaptations, and grounded downstream suggestions.
+
 ## Safety and evidence boundaries
 
 - User canon outranks generated/external suggestions.
@@ -55,7 +61,7 @@ The repository contains baseline and GREEN behavior samples, deterministic valid
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-The v0.4 verification report records the current deterministic suite. These
+The v0.5 verification report records the current deterministic suite. These
 checks cover plugin structure, contracts, validators, packaging logic, and
 static evidence boundaries—not future artifacts that have not been imported or
 exercised in Lumiverse.
@@ -67,9 +73,9 @@ World Book serialization without a contemporary native Lumiverse template.
 
 ## Roadmap
 
-Next planned: full Idea Lab and source/wiki ingestion, then native Preset Studio.
-Prompt & Regex Laboratory, Tracker Forge, LumiScript Workshop, and Spindle
-Extension Forge follow as separately routed modules.
+Next planned: native Preset Studio, followed by Prompt & Regex Laboratory,
+Tracker Forge, LumiScript Workshop, and Spindle Extension Forge as separately
+routed modules.
 
 ## Provenance and licensing
 

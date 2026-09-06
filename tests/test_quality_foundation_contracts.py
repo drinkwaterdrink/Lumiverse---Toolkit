@@ -89,6 +89,8 @@ class SharedReferenceTests(unittest.TestCase):
             "source-authority.md",
             "artifact-ownership.md",
             "evidence-model.md",
+            "idea-lab.md",
+            "source-ingestion.md",
         }
         self.assertEqual(expected, {p.name for p in REFERENCES.glob("*.md")})
 

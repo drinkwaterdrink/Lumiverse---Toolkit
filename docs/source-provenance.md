@@ -7,6 +7,11 @@
 
 These sources govern Lumiverse technical behavior. User instructions and approved project material govern creative canon and project policy.
 
+v0.5's source-ingestion workflow records third-party and user-supplied material
+by source ID, authority, relevance, temporal boundary, and adaptation status. It
+does not bundle scraped source content or treat a source ledger as proof that the
+underlying source is accurate.
+
 ## Reviewed inspiration
 
 ### AndreiNicu/World-Forge

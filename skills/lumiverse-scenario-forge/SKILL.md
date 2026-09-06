@@ -23,12 +23,15 @@ Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.m
 [Source Authority](../../shared/references/source-authority.md), and
 [Evidence Model](../../shared/references/evidence-model.md). Consult the
 [Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md)
-before naming or serializing a native mechanic.
+before naming or serializing a native mechanic. Use
+[Idea Lab](../../shared/references/idea-lab.md) for premise discovery and
+[Source Ingestion](../../shared/references/source-ingestion.md) for sourced
+settings, casts, and fixed-timeline adaptations.
 
 ## Workflow
 
 1. **Select operation and mode.** Create, revise, expand, or audit. Infer the lightest suitable mode unless the user names one: QUICK, STANDARD, RICH, SANDBOX, FRESH START, or INTIMATE. Follow [Modes and Output Contract](references/modes-and-output.md).
-2. **Lock the evidence boundary.** Separate user-supplied canon, approved project canon, known-setting sources, provisional additions, and unresolved choices. For project-linked work, use the Steward's relevant canon subset and artifact ID.
+2. **Lock the evidence boundary.** Separate user-supplied canon, approved project canon, known-setting sources, provisional additions, and unresolved choices. Apply the source ledger's temporal snapshot and treat future-knowledge leakage as a blocker. For project-linked work, use the Steward's relevant canon subset and artifact ID.
 3. **Reserve user agency.** Apply [Agency and Canon Boundaries](references/agency-and-canon.md) before drafting. The scenario may create pressures around `{{user}}`; it may not author `{{user}}`.
 4. **Build the situation engine.** For STANDARD and richer work, create the pressure graph from [Pressure Graph and Audit](references/pressure-graph-and-audit.md): nodes, entry conditions, NPC goals, bounded knowledge, secrets, discovery routes, clocks, state effects, and recombination.
 5. **Write the mode-appropriate seed.** Use the dynamic section contract in [Modes and Output Contract](references/modes-and-output.md). Include only sections that improve the premise, while preserving a playable opening, agency boundary, and downstream expansion handles.

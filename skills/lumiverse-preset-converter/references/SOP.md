@@ -835,22 +835,19 @@ If the creator *intended* 1–100 but the source actually only selected 1 or 100
 - parity edition = reproduce source runtime;
 - corrected native edition = implement intended range and document the fix.
 
-## 16.4 ST stable `pick` has no direct blind equivalent
+## 16.4 ST stable `pick` has no verified blind equivalent
 
 ST `pick` is stable per chat and position.
 
 Lumiverse documents `pick` as random per generation.
 
-To reproduce ST stability, assign each source `pick` occurrence a unique persistent key:
+Do not invent an existence-test macro to emulate it. The bundled Lumiverse
+snapshot establishes chat-persisted `@` variables and conditional blocks, but it
+does not establish a `haschatvar` macro or the exact uninitialized-value
+semantics needed for a safe initializer. A parity implementation therefore
+requires a fresh native example or observed Dry Run/runtime evidence.
 
-```text
-{{if::!{{haschatvar::mig_pick_block17_2}}}}
-  {{@mig_pick_block17_2 = {{pick::red::green::blue}}}}
-{{/if}}
-{{@mig_pick_block17_2}}
-```
-
-Use a unique key derived from:
+When that evidence exists, use a unique persistent key derived from:
 
 - source prompt ID;
 - ordinal occurrence.
@@ -2513,16 +2510,12 @@ If the value is initialized every generation and only formats the current prompt
 
 Source semantics: stable per chat/position.
 
-### Lumiverse parity pattern
+### Lumiverse parity disposition
 
-```text
-{{if::!{{haschatvar::stpick_prompt42_1}}}}
-{{@stpick_prompt42_1 = {{pick::red::green::blue}}}}
-{{/if}}
-{{@stpick_prompt42_1}}
-```
-
-Use a unique key per occurrence.
+Mark `RUNTIME TEST REQUIRED`. Do not serialize an existence-test or initializer
+from memory. With a verified native pattern, cache the draw in a unique
+chat-persisted `@` variable per occurrence and confirm swipe/regenerate behavior
+in Dry Run and runtime.
 
 ---
 

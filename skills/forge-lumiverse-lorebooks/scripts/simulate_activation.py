@@ -88,7 +88,8 @@ def entry_matches(entry: dict[str, Any], messages: list[str], evaluation: Evalua
         evaluation.uncertain.append(stable_id)
         evaluation.notes.append(f"{stable_id}: probability gate is nondeterministic")
         return False
-    if entry.get("sticky") or entry.get("cooldown") or entry.get("delay"):
+    if matched and (entry.get("sticky") or entry.get("cooldown") or entry.get("delay")):
+        evaluation.uncertain.append(stable_id)
         evaluation.notes.append(f"{stable_id}: persistent timing state requires Lumiverse live testing")
     return matched
 
@@ -152,6 +153,7 @@ def choose_groups(entries: list[dict[str, Any]], evaluation: Evaluation) -> list
                 key=lambda x: (-x.get("group_weight", 100), -x.get("priority", 0), x["stable_id"]),
             )[0]
             if len(candidates) > 1:
+                evaluation.uncertain.extend(x["stable_id"] for x in candidates)
                 evaluation.notes.append(
                     f"group {group}: real weighted selection is random; simulator chose {winner['stable_id']}"
                 )
@@ -227,16 +229,45 @@ def evaluate_case(spec: dict[str, Any], case: dict[str, Any]) -> Evaluation:
     return evaluation
 
 
+def assess_case(evaluation: Evaluation, case: dict[str, Any]) -> dict[str, Any]:
+    """Classify one bounded case without treating uncertainty as success."""
+    active = [entry["stable_id"] for entry in evaluation.active]
+    uncertain = sorted(set(evaluation.uncertain))
+    failures: list[str] = []
+    for stable_id in case.get("expected_active", []):
+        if stable_id not in active and stable_id not in uncertain:
+            failures.append(f"expected active but absent: {stable_id}")
+    for stable_id in case.get("expected_inactive", []):
+        if stable_id in active and stable_id not in uncertain:
+            failures.append(f"expected inactive but active: {stable_id}")
+    if failures:
+        status = "FAIL"
+    elif uncertain:
+        status = "UNPROVEN"
+    else:
+        status = "PASS"
+    return {
+        "active": active,
+        "uncertain": uncertain,
+        "failures": failures,
+        "notes": evaluation.notes,
+        "status": status,
+    }
+
+
 def render_report(spec_path: Path, tests_path: Path, results: list[dict[str, Any]]) -> str:
-    failures = sum(1 for result in results if result["failures"])
+    failures = sum(1 for result in results if result["status"] == "FAIL")
+    unproven = sum(1 for result in results if result["status"] == "UNPROVEN")
+    overall = "FAIL" if failures else "UNPROVEN" if unproven else "PASS"
     lines = [
         "# Activation Test Report",
         "",
         f"- Spec: `{spec_path.name}`",
         f"- Tests: `{tests_path.name}`",
-        f"- Status: {'PASS' if failures == 0 else 'FAIL'}",
+        f"- Status: {overall}",
         f"- Cases: {len(results)}",
         f"- Failing cases: {failures}",
+        f"- Unproven cases: {unproven}",
         "",
         "> This bounded simulator does not reproduce semantic embeddings, probability rolls, persistent sticky/cooldown/delay state, or Lumiverse internals. Confirm with Dry Run and World Book Diagnostics.",
         "",
@@ -248,7 +279,7 @@ def render_report(spec_path: Path, tests_path: Path, results: list[dict[str, Any
                 "",
                 f"- Active: {', '.join(result['active']) or '(none)'}",
                 f"- Uncertain: {', '.join(result['uncertain']) or '(none)'}",
-                f"- Result: {'FAIL' if result['failures'] else 'PASS'}",
+                f"- Result: {result['status']}",
             ]
         )
         if result["failures"]:
@@ -273,29 +304,16 @@ def main() -> int:
 
     results: list[dict[str, Any]] = []
     failed = False
+    unproven = False
     for index, case in enumerate(tests.get("cases", [])):
         if not isinstance(case, dict) or not isinstance(case.get("messages"), list):
             raise SystemExit(f"ERROR: tests case {index} is malformed")
         evaluation = evaluate_case(spec, case)
-        active = [entry["stable_id"] for entry in evaluation.active]
-        uncertain = sorted(set(evaluation.uncertain))
-        failures: list[str] = []
-        for stable_id in case.get("expected_active", []):
-            if stable_id not in active and stable_id not in uncertain:
-                failures.append(f"expected active but absent: {stable_id}")
-        for stable_id in case.get("expected_inactive", []):
-            if stable_id in active:
-                failures.append(f"expected inactive but active: {stable_id}")
-        failed = failed or bool(failures)
-        results.append(
-            {
-                "name": case.get("name", f"Case {index + 1}"),
-                "active": active,
-                "uncertain": uncertain,
-                "failures": failures,
-                "notes": evaluation.notes,
-            }
-        )
+        result = assess_case(evaluation, case)
+        result["name"] = case.get("name", f"Case {index + 1}")
+        failed = failed or result["status"] == "FAIL"
+        unproven = unproven or result["status"] == "UNPROVEN"
+        results.append(result)
 
     report = render_report(args.spec, args.tests, results)
     if args.report:
@@ -303,7 +321,7 @@ def main() -> int:
         args.report.write_text(report + "\n", encoding="utf-8")
     else:
         print(report)
-    return 1 if failed else 0
+    return 1 if failed else 2 if unproven else 0
 
 
 if __name__ == "__main__":

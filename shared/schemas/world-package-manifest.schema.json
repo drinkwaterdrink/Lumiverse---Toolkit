@@ -10,7 +10,9 @@
     "native_lumiverse_full_fidelity": {"type": "boolean"},
     "native_template_evidence": {"type": "array"},
     "artifacts": {"type": "array", "items": {"type": "object"}},
-    "findings": {"type": "array"}
+    "findings": {"type": "array"},
+    "capability_receipt": {"type": ["string", "object"]},
+    "build_ledger": {"type": ["string", "object"]}
   },
   "additionalProperties": true
 }

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lumiverse-toolkit.build-ledger/v1",
+  "type": "object",
+  "required": ["schema", "project_id", "status", "current_phase", "phases"],
+  "properties": {
+    "schema": {"const": "lumiverse-toolkit.build-ledger/v1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["planning", "in_progress", "paused", "blocked", "complete"]},
+    "current_phase": {"type": ["string", "null"]},
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "dependencies", "evidence"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["pending", "in_progress", "complete", "skipped", "blocked"]},
+          "artifact": {"type": "string", "minLength": 1},
+          "signoff_anchor": {"type": "string", "minLength": 1},
+          "skip_reason": {"type": "string", "minLength": 1},
+          "dependencies": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "array"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

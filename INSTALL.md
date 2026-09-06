@@ -1,6 +1,10 @@
 # Install Lumiverse Toolkit
 
-Lumiverse Toolkit v0.2 bundles five skills. It has no MCP server, external account connection, or hooks. Python 3.10+ is required for bundled validators and CHARX packaging; Node.js is required for the preset Regex checker. Both specialists are included without a separate personal-skill installation.
+Lumiverse Toolkit `0.4.0+codex.20260906063321` bundles six skills. It has no MCP
+server, external account connection, or hooks. Python 3.10+ is required for
+bundled validators and CHARX packaging; Node.js is required for the preset Regex
+checker. Lorebook, world-building, and preset-conversion specialists are included
+without separate personal-skill installations.
 
 ## Install from the GitHub marketplace
 
@@ -30,7 +34,7 @@ Lumiverse Toolkit v0.2 bundles five skills. It has no MCP server, external accou
 
 ## Use it
 
-World Forge is available after installing the v0.3 package. Try this first:
+World Forge is available in the current package. Try this first:
 
 ```text
 Use Lumiverse World Forge to create a small narrator_world blueprint with one setting,
@@ -54,6 +58,9 @@ ChatGPT mobile can use plugins and bundled skills that are available to your acc
 
 ## Update or roll back
 
-- Run `codex plugin marketplace upgrade lumiverse-toolkit-marketplace` to refresh the marketplace snapshot, then reinstall or update the plugin in `/plugins`.
+- Run `codex plugin marketplace upgrade lumiverse-toolkit-marketplace`, then
+  `codex plugin add lumiverse-toolkit@lumiverse-toolkit-marketplace` to refresh
+  and reinstall the current plugin. Start a new session if the old skill catalog
+  remains loaded.
 - For a rollback, install from a tagged release or Git commit instead of `main`.
 - Export any active project record before changing versions so stable IDs, canon status, and unresolved items remain recoverable.

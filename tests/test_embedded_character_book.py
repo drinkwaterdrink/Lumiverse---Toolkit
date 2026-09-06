@@ -16,13 +16,29 @@ class EmbeddedCharacterBookTests(unittest.TestCase):
         cls.source = json.loads((ROOT / "tests/fixtures/world_forge/narrator-loreforge-valid.json").read_text(encoding="utf-8"))
 
     def test_base_subset_and_manifest(self):
-        book, manifest = compiler.compile_character_book(self.source, "world")
+        book, manifest = compiler.compile_character_book(self.source, "world", allow_reduced_fidelity=True)
         self.assertEqual(set(book), {"entries"})
         self.assertTrue(book["entries"][0]["constant"])
         self.assertEqual(book["entries"][1]["keys"], ["Mara Vale", "Mara"])
         self.assertEqual(manifest["stable_id_map"]["world.mara"], 1)
         self.assertIn("sticky", manifest["omitted_settings"]["world.location"])
         self.assertFalse(manifest["native_lumiverse_full_fidelity"])
+        self.assertTrue(manifest["reduced_fidelity_approved"])
+
+    def test_semantic_omissions_require_explicit_reduced_fidelity_opt_in(self):
+        with self.assertRaisesRegex(ValueError, "reduced fidelity"):
+            compiler.compile_character_book(self.source, "world")
+
+    def test_default_settings_compile_without_reduced_fidelity_opt_in(self):
+        source = json.loads(json.dumps(self.source))
+        for book in source["books"]:
+            for entry in book["entries"]:
+                for key, default in compiler.ADVANCED_DEFAULTS.items():
+                    entry[key] = default
+                entry["priority"] = entry["order"]
+        _, manifest = compiler.compile_character_book(source, "world")
+        self.assertFalse(manifest["reduced_fidelity_approved"])
+        self.assertEqual(manifest["omitted_settings"], {})
 
     def test_invalid_book_id_refused(self):
         with self.assertRaises(ValueError):
@@ -31,7 +47,7 @@ class EmbeddedCharacterBookTests(unittest.TestCase):
     def test_disabled_entry_is_not_enabled(self):
         source = json.loads(json.dumps(self.source))
         source["books"][0]["entries"][1]["state"] = "disabled"
-        book, _ = compiler.compile_character_book(source, "world")
+        book, _ = compiler.compile_character_book(source, "world", allow_reduced_fidelity=True)
         self.assertFalse(book["entries"][1]["enabled"])
 
 

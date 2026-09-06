@@ -9,6 +9,24 @@ World Forge coordinates `lumiverse-character-forge`, `lumiverse-scenario-forge`,
 `forge-lumiverse-lorebooks`, and `lumiverse-project-steward` to build complete
 roleplay worlds while keeping each artifact's ownership clear.
 
+Use **create then refine** by default. Produce the smallest coherent connected
+blueprint, audit it, and refine selected parts. Offer an **Interview** or **Idea Lab**
+route for discovery-heavy requests, vague premises, or meaningful source
+conflicts without making it mandatory.
+
+Preset creation is separate from World Forge. A package may recommend preset
+needs or hand off conversion work, but it must remain usable with a compatible
+user-selected preset unless the user explicitly commissions a preset artifact.
+
+## Shared contracts
+
+Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.md),
+[Agency Contract](../../shared/references/agency-contract.md),
+[Source Authority](../../shared/references/source-authority.md),
+[Evidence Model](../../shared/references/evidence-model.md),
+[Artifact Ownership](../../shared/references/artifact-ownership.md), and the
+[Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md).
+
 ## Profiles
 
 Choose exactly one: `single_character`, `character_with_world`, `narrator_world`,
@@ -18,13 +36,13 @@ Use World Forge when the request connects two or more of those artifacts.
 
 ## Workflow
 
-1. Read `references/profiles-and-routing.md` and classify the interaction model.
+1. Read [Profiles and Routing](references/profiles-and-routing.md) and classify the interaction model; also read [Build Workflow](references/build-workflow.md).
 2. Establish approved canon, provisional additions, temporal facts, relationship
    claims, and the complete `{{user}}` agency contract.
 3. Present a compact blueprint when the selected profile changes the output.
 4. Delegate scenario structure to Scenario Forge, card fields to Character Forge,
    and lore entries to Forge Lumiverse Lorebooks.
-5. Validate the world project record with `shared/validators/world_project.py`.
+5. Maintain and validate a build ledger for staged or connected projects, then validate the world project record with `shared/validators/world_project.py`.
 6. Compile the LoreForge book with `scripts/compile_character_book.py` when an
    embedded book is required.
 7. Put the compiled object at `data.character_book` and package V3 CHARX through

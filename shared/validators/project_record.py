@@ -30,7 +30,10 @@ RESERVED_USER_AGENCY = {
     "attraction",
     "consent",
     "decisions",
+    "relationships",
+    "abilities",
     "backstory",
+    "next_voluntary_action",
 }
 COLLECTIONS_WITH_IDS = ("policies", "entities", "canon", "artifacts", "dependencies")
 
@@ -146,4 +149,3 @@ def validate_project_record(record: Any) -> list[dict[str, str]]:
             )
 
     return findings
-

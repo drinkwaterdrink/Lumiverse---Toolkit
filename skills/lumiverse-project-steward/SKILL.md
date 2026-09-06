@@ -7,6 +7,16 @@ description: Use when coordinating two or more connected Lumiverse artifacts, pr
 
 Coordinate the project while specialist skills create or transform artifacts.
 
+## Shared contracts
+
+Read [Agency Contract](../../shared/references/agency-contract.md),
+[Source Authority](../../shared/references/source-authority.md),
+[Evidence Model](../../shared/references/evidence-model.md),
+[Artifact Ownership](../../shared/references/artifact-ownership.md), and the
+[Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md).
+For large or resumable builds, require the shared build ledger and capability
+receipts at artifact gates.
+
 ## Workflow
 
 1. **Route the request.** If it is self-contained, invoke the matching specialist and stop. If it affects multiple artifacts, continuity, or a release, continue as Steward.
@@ -16,6 +26,10 @@ Coordinate the project while specialist skills create or transform artifacts.
 5. **Prepare focused handoffs.** Give each specialist only its artifact, the relevant canon subset, user constraints, dependencies, and required return contract. Follow [Routing and Handoffs](references/routing-and-handoffs.md).
 6. **Merge evidence.** Update the record from returned artifacts and passports. Preserve unknown fields and untouched settings. Record losses, transforms, unresolved items, decisions, and validation findings explicitly.
 7. **Audit or release.** Follow [Changes, Validation, and Releases](references/change-validation-release.md). A blocker prevents certification; a major prevents release unless the user explicitly accepts it. Never claim an edit, validation, import test, or install succeeded without evidence.
+
+Intimacy support is an **optional routed module**, never a universal house
+style. Route it only for an explicit, age-safe request with a consenting-adult
+contract; otherwise keep ordinary character and scenario workflows neutral.
 
 ## Invariants
 

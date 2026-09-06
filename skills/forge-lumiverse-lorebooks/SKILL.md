@@ -11,6 +11,21 @@ requests still route directly here.
 
 Build a source-faithful, activation-engineered lorebook package through short mobile-friendly interviews, explicit quality gates, deterministic validation, and resumable project files.
 
+Use **create then refine** when the brief is sufficient: propose an activation
+architecture and first draft, audit it, then refine. Offer an **Interview** or
+**Idea Lab** for vague concepts, source conflicts, and high-impact canon choices;
+retain staged checkpoints for large or source-heavy books.
+
+## Shared contracts
+
+Read [Creative Quality Kernel](../../shared/references/creative-quality-kernel.md),
+[Agency Contract](../../shared/references/agency-contract.md),
+[Source Authority](../../shared/references/source-authority.md), and
+[Evidence Model](../../shared/references/evidence-model.md). Consult
+[Artifact Ownership](../../shared/references/artifact-ownership.md) and the
+[Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md)
+for attachment, ownership, and native-feature decisions.
+
 ## Start correctly
 
 1. Read `references/lumiverse-runtime.md` before making any Lumiverse claim or field recommendation.

@@ -7,6 +7,16 @@ description: Convert, audit, repair, and certify SillyTavern Chat Completion pre
 
 Work only on **SillyTavern Chat Completion → Lumiverse** preset migration. Convert the source's effective behavior, not merely its JSON keys.
 
+## Shared contracts
+
+Read [Agency Contract](../../shared/references/agency-contract.md),
+[Source Authority](../../shared/references/source-authority.md), and
+[Evidence Model](../../shared/references/evidence-model.md). Use the
+[Lumiverse Capability Map](../../shared/references/lumiverse-capability-map.md)
+as a routing index, while the converter's SOP remains authoritative for the
+detailed migration audit. Do not expand this specialist into native preset
+creation.
+
 ## Evidence and references
 
 Use this order when evidence conflicts:
